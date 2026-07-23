@@ -1,0 +1,105 @@
+{
+  "entities": {
+    "users": {
+      "title": "User",
+      "description": "User profiles for authenticated users",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "role": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["uid", "email"]
+    },
+    "jobs": {
+      "title": "Job",
+      "description": "Job descriptions for resume matching",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "department": { "type": "string" },
+        "location": { "type": "string" },
+        "type": { "type": "string" },
+        "description": { "type": "string" },
+        "requiredSkills": { "type": "array", "items": { "type": "string" } },
+        "preferredSkills": { "type": "array", "items": { "type": "string" } },
+        "minExperienceYears": { "type": "number" },
+        "salaryRange": { "type": "string" },
+        "status": { "type": "string" },
+        "createdBy": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["title", "requiredSkills", "createdBy"]
+    },
+    "resumes": {
+      "title": "Resume",
+      "description": "Uploaded resume documents and parsed metadata",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "candidateName": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "filename": { "type": "string" },
+        "fileUrl": { "type": "string" },
+        "storagePath": { "type": "string" },
+        "fileType": { "type": "string" },
+        "fileSize": { "type": "number" },
+        "rawText": { "type": "string" },
+        "cleanText": { "type": "string" },
+        "skills": { "type": "array", "items": { "type": "string" } },
+        "totalExperienceYears": { "type": "number" },
+        "summary": { "type": "string" },
+        "uploadedAt": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["uid", "filename", "fileUrl"]
+    },
+    "analysis": {
+      "title": "Analysis",
+      "description": "Resume vs Job analysis results and match scores",
+      "type": "object",
+      "properties": {
+        "resumeId": { "type": "string" },
+        "jobId": { "type": "string" },
+        "candidateName": { "type": "string" },
+        "jobTitle": { "type": "string" },
+        "matchScore": { "type": "number" },
+        "skillsMatch": { "type": "object" },
+        "tfidfSimilarity": { "type": "number" },
+        "experienceScore": { "type": "number" },
+        "recommendation": { "type": "string" },
+        "summary": { "type": "string" },
+        "keyHighlights": { "type": "array", "items": { "type": "string" } },
+        "breakdown": { "type": "object" },
+        "analyzedAt": { "type": "string" },
+        "uid": { "type": "string" }
+      },
+      "required": ["resumeId", "jobId", "matchScore", "uid"]
+    },
+    "reports": {
+      "title": "Report",
+      "description": "Exported/saved candidate evaluation reports",
+      "type": "object",
+      "properties": {
+        "resumeId": { "type": "string" },
+        "jobId": { "type": "string" },
+        "candidateName": { "type": "string" },
+        "jobTitle": { "type": "string" },
+        "reportUrl": { "type": "string" },
+        "storagePath": { "type": "string" },
+        "generatedAt": { "type": "string" },
+        "summary": { "type": "string" },
+        "matchScore": { "type": "number" },
+        "recommendation": { "type": "string" },
+        "uid": { "type": "string" }
+      },
+      "required": ["resumeId", "uid"]
+    }
+  }
+}

@@ -17,7 +17,6 @@ Streamlining resume screening with AI-assisted candidate insights.
 
 [Overview](#-overview) •
 [Features](#-key-features) •
-[Screenshots](#-screenshots) •
 [Installation](#-installation) •
 [Usage](#-usage-guide) •
 [Contributing](#-contributing)

@@ -152,7 +152,7 @@ cvision/
 ### Prerequisites
 - Node.js (v18 or higher)
 - npm
-- A Firebase project (see [Environment Variables](#-environment-variables))
+- A Firebase project 
 
 ### Steps
 
